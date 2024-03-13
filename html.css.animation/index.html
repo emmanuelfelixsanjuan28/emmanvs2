@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animations</title>
+
+<body>
+    
+
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-right: 30px;
+    }
+    
+    .circle-container,
+    .pulse-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20% 20% 20% 20%;
+    }
+    
+    .container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        animation: rotate 8s linear infinite;
+    }
+    
+    .circle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .red {
+        background-color: red;
+        top: 0;
+        left: 0;
+    }
+    
+    .blue {
+        background-color: blue;
+        top: 0;
+        right: 0;
+    }
+    
+    .green {
+        background-color: green;
+        bottom: 0;
+        left: 0;
+    }
+    
+    .yellow {
+        background-color: yellow;
+        bottom: 0;
+        right: 0;
+    }
+    
+    @keyframes rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes colorTransition {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+    
+    .circle:hover {
+        animation: colorTransition 5s infinite alternate;
+    }
+
+    .pulse {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #f1f4f7; /* Change the color as needed */
+        animation: pulse 2s infinite alternate ease-in-out;
+        box-shadow: 0 0 30px 10px rgba(192, 225, 247, 0.8); /* Adjust shadow properties */
+        
+        
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 30px 10px rgba(102, 151, 201, 0.8);
+        }
+        100% {
+            transform: scale(1.2);
+            box-shadow: 0 0 50px 20px rgba(91, 131, 158, 0.8);
+        }
+    }
+    .pulse-container {
+        margin-left: 30px;
+    }
+</style>
+
+
+
+<div class="circle-container">
+    <div class="container">
+        <div class="circle red"></div>
+        <div class="circle blue"></div>
+        <div class="circle green"></div>
+        <div class="circle yellow"></div>
+    </div>
+</div>
+
+<div class="pulse-container">
+    <div class="pulse"></div>
+</div>
+</body>
+
+</html>
